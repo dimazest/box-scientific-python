@@ -1,68 +1,23 @@
-name: python
-version: 1.1.0
-inherits: wercker/ubuntu12.04-webessentials@1.0.4
+name: scientific-python
+version: 0.0.1
+inherits: wercker/python@1.0.4
 type : main
 platform : ubuntu@12.04
-description : python
+description : Python scientific stack.
 keywords:
   - python
-  - virtualenv 1.11.4
+  - python 2.6
   - python 2.7
   - python 3.2
-  - wheel
-packages :
-  - python@2.7.3
-  - python@3.2.3
-  - setuptools@3.4.4
-  - pip@1.5.5
-  - virtualenv@1.11.5
-  - wheel@0.23.0
-  - psycopg2
-  - phantomjs
-  - mercurial@2.2.2
+  - python 3.2
+  - python 3.2
+  - nltk
+  - numpy
+  - scikit-learn
+  - scipy
+  - maltparser
+  - matplotlib
+
 script : |
-  source provision.sh
-
-box-detect:
-  priority : 900
-  version :
-  detect:
-    - files:
-      - requirements.txt
-    - files:
-      - setup.py
-
-default-build:
-  python:
-    priority : 50
-    detect:
-      - default: true
-    text-to-append: |
-      # Build definition
-      build:
-        # The steps that will be executed on build
-        steps:
-          # A step that sets up the python virtual environment
-          - virtualenv:
-              name: setup virtual environment
-              install_wheel: false # Enable wheel to speed up builds (experimental)
-
-          # # Use this virtualenv step for python 3.2
-          # - virtualenv
-          #     name: setup virtual environment
-          #     python_location: /usr/bin/python3.2
-
-          # A step that executes `pip install` command.
-          - pip-install
-
-          # # This pip-install clears the local wheel cache
-          # - pip-install:
-          #     clean_wheel_dir: true
-
-          # A custom script step, name value is used in the UI
-          # and the code value contains the command that get executed
-          - script:
-              name: echo python information
-              code: |
-                echo "python version $(python --version) running"
-                echo "pip version $(pip --version) running"
+  wget -O - https://bootstrap.saltstack.com | sudo sh
+  salt-call --local state.highstate
