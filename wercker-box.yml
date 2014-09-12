@@ -17,7 +17,7 @@ keywords:
   - scipy
   - maltparser
   - matplotlib
-
+no-response-timeout: 10
 script : |
   wget -O - https://bootstrap.saltstack.com | sudo sh
   sudo salt-call --local state.highstate  --retcode-passthrough -c salt/ --file-root salt/roots/salt
