@@ -20,4 +20,4 @@ keywords:
 
 script : |
   wget -O - https://bootstrap.saltstack.com | sudo sh
-  salt-call --local state.highstate -c salt
+  sudo salt-call --local state.highstate -c salt

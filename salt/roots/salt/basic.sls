@@ -54,16 +54,33 @@ wheel_{{ py }}:
     - require:
       - cmd: pip_{{ py }}
 
-{% for package in ['nose', 'numpy', 'scipy', 'scikit-learn', 'matplotlib', 'nltk'] %}
-
-{{ py }}_{{ package }}:
+numpy_{{  py }}:
   pip.installed:
-    - name: {{ package }}
+    - name: numpy
     - bin_env: pip{{ py }}
     - use_wheel: True
     - require:
       - pip: wheel_{{ py }}
-{% endfor %}
+
+scipy_{{  py }}:
+  pip.installed:
+    - name: scipy
+    - bin_env: pip{{ py }}
+    - use_wheel: True
+    - require:
+      - pip: numpy_{{ py }}
+
+
+# {% for package in ['nose', 'numpy', 'scipy', 'scikit-learn', 'matplotlib', 'nltk'] %}
+#
+# {{ py }}_{{ package }}:
+#   pip.installed:
+#     - name: {{ package }}
+#     - bin_env: pip{{ py }}
+#     - use_wheel: True
+#     - require:
+#       - pip: wheel_{{ py }}
+# {% endfor %}
 
 {% endfor %}
 
