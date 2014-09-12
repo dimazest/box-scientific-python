@@ -1,5 +1,5 @@
 name: scientific-python
-version: 0.0.3
+version: 0.0.4
 inherits: wercker/python@1.0.4
 type : main
 platform : ubuntu@12.04
@@ -21,4 +21,4 @@ keywords:
 script : |
   wget -O - https://bootstrap.saltstack.com | sudo sh
   ls
-  sudo salt-call --local state.highstate -c salt
+  sudo salt-call --local state.highstate -c salt --retcode-passthrough
