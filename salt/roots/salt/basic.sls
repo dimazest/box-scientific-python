@@ -18,6 +18,7 @@ packges:
       - gfortran
       - git
       - htop
+      - libagg-dev
       - libatlas-base-dev
       - libatlas-dev
       - libblas-dev
