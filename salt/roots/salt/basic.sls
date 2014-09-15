@@ -62,14 +62,13 @@ numpy_{{  py }}:
     - require:
       - pip: wheel_{{ py }}
 
-scipy_{{  py }}:
-  pip.installed:
-    - name: scipy
-    - bin_env: pip{{ py }}
-    - use_wheel: True
-    - require:
-      - pip: numpy_{{ py }}
-
+# scipy_{{  py }}:
+#   pip.installed:
+#     - name: scipy
+#     - bin_env: pip{{ py }}
+#     - use_wheel: True
+#     - require:
+#       - pip: numpy_{{ py }}
 
 # {% for package in ['nose', 'numpy', 'scipy', 'scikit-learn', 'matplotlib', 'nltk'] %}
 #
