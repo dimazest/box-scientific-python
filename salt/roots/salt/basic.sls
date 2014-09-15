@@ -79,6 +79,24 @@ scikit-learn_{{  py }}:
     - require:
       - pip: scipy_{{ py }}
 
+{% for package in [
+  'dateutil',
+  'matplotlib',
+  'nltk',
+  'nose',
+  'pyparsing',
+  'tornado',
+] %}
+
+{{ py }}_{{ package }}:
+  pip.installed:
+    - name: {{ package }}
+    - bin_env: pip{{ py }}
+    - use_wheel: True
+    - require:
+      - pip: scikit-learn_{{  py }}
+{% endfor %}
+
 {% endfor %}
 
 tox:

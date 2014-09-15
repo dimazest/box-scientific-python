@@ -1,6 +1,6 @@
 name: scientific-python
-version: 0.0.12
-inherits: dimazest/scientific-python@0.0.7
+version: 0.0.13
+inherits: dimazest/scientific-python@0.0.12
 type : main
 platform : ubuntu@12.04
 description : Python scientific stack.
