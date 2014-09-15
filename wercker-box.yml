@@ -20,4 +20,4 @@ keywords:
 no-response-timeout: 30
 script : |
   wget -O - https://bootstrap.saltstack.com | sudo sh
-  sudo salt-call --local state.highstate  --retcode-passthrough -c salt/ --file-root salt/roots/salt
+  sudo salt-call --local state.highstate  -c salt/ --file-root salt/roots/salt
