@@ -1,7 +1,8 @@
 # Python box
 
-A [wercker box](http://devcenter.wercker.com/articles/boxes/) with python 2.6, 2.7
-and 3.4 installed. For both versions of python setuptools, wheel, and pip are installed.
+A [wercker box](http://devcenter.wercker.com/articles/boxes/) with python 2.6,
+2.7, 3.3 and 3.4 installed. For both versions of python setuptools, wheel, and
+pip are installed.
 
 There are two steps by default added to the wercker.yml:
 
