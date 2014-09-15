@@ -1,5 +1,5 @@
 name: scientific-python
-version: 0.0.9
+version: 0.0.10
 inherits: dimazest/scientific-python@0.0.7
 type : main
 platform : ubuntu@12.04

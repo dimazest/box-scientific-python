@@ -71,7 +71,16 @@ scipy_{{  py }}:
     - require:
       - pip: numpy_{{ py }}
 
-{% for package in ['nose', 'scikit-learn', 'matplotlib', 'nltk'] %}
+{% for package in [
+  'dateutil',
+  'matplotlib',
+  'nltk',
+  'nose',
+  'pycxx',
+  'pyparsing',
+  'scikit-learn',
+  'tornado',
+] %}
 
 {{ py }}_{{ package }}:
   pip.installed:
@@ -93,17 +102,10 @@ tox:
 # coveralls:
 #   pip.installed
 #
-# nose:
-#   pip.installed
-#
-# nltk:
-#   pip.installed
 
-# nltk_data:
-#   cmd.run:
-#     - name: python -m nltk.downloader -d /usr/share/nltk_data all
-#     - cwd: /vagrant
-#     - onlyif: ls /vagrant
+nltk_data:
+  cmd.run:
+    - name: python -m nltk.downloader -d /usr/share/nltk_data all
 
 malt:
   archive:
