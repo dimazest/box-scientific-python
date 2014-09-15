@@ -71,25 +71,31 @@ scipy_{{  py }}:
     - require:
       - pip: numpy_{{ py }}
 
-{% for package in [
-  'dateutil',
-  'matplotlib',
-  'nltk',
-  'nose',
-  'pycxx',
-  'pyparsing',
-  'scikit-learn',
-  'tornado',
-] %}
-
-{{ py }}_{{ package }}:
+scikit-learn_{{  py }}:
   pip.installed:
-    - name: {{ package }}
+    - name: scikit-learn
     - bin_env: pip{{ py }}
     - use_wheel: True
     - require:
-      - pip: wheel_{{ py }}
-{% endfor %}
+      - pip: scipy_{{ py }}
+
+# {% for package in [
+#   'dateutil',
+#   'matplotlib',
+#   'nltk',
+#   'nose',
+#   'pyparsing',
+#   'tornado',
+# ] %}
+#
+# {{ py }}_{{ package }}:
+#   pip.installed:
+#     - name: {{ package }}
+#     - bin_env: pip{{ py }}
+#     - use_wheel: True
+#     - require:
+#       - pip: wheel_{{ py }}
+# {% endfor %}
 
 {% endfor %}
 
