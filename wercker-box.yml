@@ -1,6 +1,6 @@
 name: scientific-python
-version: 0.0.4
-inherits: wercker/python@1.0.4
+version: 0.0.5
+inherits: dimazest/scientific-python@0.0.4
 type : main
 platform : ubuntu@12.04
 description : Python scientific stack.
