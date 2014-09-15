@@ -79,10 +79,7 @@ scipy_{{  py }}:
     - bin_env: pip{{ py }}
     - use_wheel: True
     - require:
-      - pip:
-          - wheel_{{ py }}
-          - numpy_{{ py }}
-          - scipy_{{ py }}
+      - pip: wheel_{{ py }}
 {% endfor %}
 
 {% endfor %}
