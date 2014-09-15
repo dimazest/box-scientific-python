@@ -1,3 +1,6 @@
+# -*- mode: yaml -*-
+# vi: set ft=yaml :
+
 base:
   pkgrepo.managed:
     - humanname: Deadsnakes PPA
@@ -34,7 +37,7 @@ packges:
       - python3.3-dev
       - python3.4-dev
 
-{% for py in ['2.6', '2.7', '3.2', '3.3', '3.4'] %}
+{% for py in ['2.6', '2.7'] %}
 ez_setup_{{ py }}:
   cmd.run:
     - name: python{{ py }} /bin/ez_setup.py
