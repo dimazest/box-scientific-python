@@ -31,13 +31,11 @@ packges:
       - prover9
       - python2.6
       - python2.6-dev
-      - python3.2
-      - python3.2-dev
       - python3.3
       - python3.3-dev
       - python3.4-dev
 
-{% for py in ['2.6', '2.7'] %}
+{% for py in ['2.6', '2.7', '3.3', '3.4'] %}
 ez_setup_{{ py }}:
   cmd.run:
     - name: python{{ py }} /bin/ez_setup.py
