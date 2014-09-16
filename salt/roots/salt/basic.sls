@@ -38,6 +38,17 @@ packges:
       - python3.3-dev
       - python3.4-dev
 
+packges:
+  pkg.removed:
+    - pkgs:
+      - python3.2
+      - python3.2-dev
+      - nodejs
+      - postgresql-client-9.3
+      - openjdk-6-jre
+      - memcached
+      - mongodb
+
 {% for py in ['2.6', '2.7', '3.3', '3.4'] %}
 ez_setup_{{ py }}:
   cmd.run:
