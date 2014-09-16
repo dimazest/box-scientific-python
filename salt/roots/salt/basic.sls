@@ -25,7 +25,10 @@ packges:
       - libatlas-base-dev
       - libatlas-dev
       - libblas-dev
+      - libfreetype6-dev
+      - libjpeg8-dev
       - liblapack-dev
+      - libpng-dev
       - mercurial
       - openjdk-7-jre-headless
       - prover9
