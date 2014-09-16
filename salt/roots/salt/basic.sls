@@ -38,7 +38,7 @@ packges:
       - python3.3-dev
       - python3.4-dev
 
-packges:
+to_remove:
   pkg.removed:
     - pkgs:
       - python3.2
