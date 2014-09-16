@@ -83,11 +83,11 @@ scikit-learn_{{  py }}:
       - pip: scipy_{{ py }}
 
 {% for package in [
-  'dateutil',
   'matplotlib',
   'nltk',
   'nose',
   'pyparsing',
+  'python-dateutil',
   'tornado',
 ] %}
 
